@@ -1,0 +1,94 @@
+﻿@model MvcEL6Validation.Models.HomeDataModelEnterpriseLibrary
+
+<h2>Validation Test for Enterprise Library</h2>
+@*@{
+    HtmlHelper.ClientValidationEnabled = false;
+    HtmlHelper.UnobtrusiveJavaScriptEnabled = false;
+}*@
+
+@using (Html.BeginForm("IndexEnterpriseLibrary", "Home"))
+{
+    
+     @Html.ValidationSummary(true)
+     @Html.AntiForgeryToken() 
+    
+    <fieldset>
+        <legend>Validation Form</legend>
+
+   
+        <div>
+            @Html.LabelFor(model => model.ValInt1)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ValInt1)
+            @Html.ValidationMessageFor(model => model.ValInt1)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.ValInt2)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ValInt2)
+            @Html.ValidationMessageFor(model => model.ValInt2)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.ValString1)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ValString1)
+            @Html.ValidationMessageFor(model => model.ValString1)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.ValString2)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ValString2)
+            @Html.ValidationMessageFor(model => model.ValString2)
+        </div>
+    
+    
+        <div>
+            @Html.LabelFor(model => model.ValDouble1)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ValDouble1)
+            @Html.ValidationMessageFor(model => model.ValDouble1)
+        </div>
+    
+        <div>
+            @Html.LabelFor(model => model.ValDouble2)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ValDouble2)
+            @Html.ValidationMessageFor(model => model.ValDouble2)
+        </div>
+    
+        <div>
+            @Html.LabelFor(model => model.ValDateTime1)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ValDateTime1)
+            @Html.ValidationMessageFor(model => model.ValDateTime1)
+        </div>
+    
+        <div>
+            @Html.LabelFor(model => model.ValDateTime2)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ValDateTime2)
+            @Html.ValidationMessageFor(model => model.ValDateTime2)
+        </div>
+    
+
+        <p>
+            <input type="submit" value="SendToServer"   />
+        </p>
+    </fieldset>
+
+}
+   
+@section Scripts {
+  @*  @Scripts.Render("~/bundles/jqueryval")*@
+}
